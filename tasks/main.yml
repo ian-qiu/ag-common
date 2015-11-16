@@ -1,2 +1,5 @@
 ---
-# tasks file for ag-common
+- name: replace sources.list
+  copy: src=./sources.list dest=/etc/apt/sources.list backup=yes
+- name: update packages
+  apt: update-cache=yes cache_valid_time=86400
